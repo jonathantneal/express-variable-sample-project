@@ -1,0 +1,13 @@
+@import "https://unpkg.com/sanitize.css@8.0.0/sanitize.css";
+
+body {
+	margin: 2%;
+}
+
+h1 {
+	margin-block: 0;
+}
+
+.intro {
+	font-size: 1.25em;
+}
