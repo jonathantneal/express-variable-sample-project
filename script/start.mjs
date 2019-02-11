@@ -1,17 +1,21 @@
 import express from 'express';
 import expressVariable from 'express-variable';
 import postcssPresetEnv from 'postcss-preset-env';
+import phtmlDoctype from '@phtml/doctype';
+import phtmlJsx from '@phtml/jsx';
 
 const app = express();
 
 app.use(expressVariable('public', {
 	js: {
-		presets: [
-			['@babel/react', {
+		plugins: [
+			['@babel/plugin-transform-react-jsx', {
 				pragma: '$',
 				pragmaFrag: '$',
 				useBuiltIns: true
-			}],
+			}]
+		],
+		presets: [
 			['@babel/env', {
 				shippedProposals: true,
 				targets: '> 1%'
@@ -29,6 +33,12 @@ app.use(expressVariable('public', {
 		map: {
 			inline: true
 		}
+	},
+	html: {
+		plugins: [
+			phtmlDoctype(),
+			phtmlJsx({ data: { location: 'JSX in HTML' } })
+		]
 	}
 }));
 
