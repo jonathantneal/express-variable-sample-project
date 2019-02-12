@@ -4,8 +4,8 @@
 [![Build Status][cli-img]][cli-url]
 [![Support Chat][git-img]][git-url]
 
-[Express Variable] lets you automatically transform CSS and JS in [Express]
-using [Babel] and [PostCSS].
+[Express Variable] lets you automatically transform HTML, CSS, and JS in
+[Express] using [pHTML], [Babel], and [PostCSS].
 
 ### Installation
 
@@ -35,4 +35,5 @@ Once completed, visit [http://localhost:8080/](http://localhost:8080/).
 [Babel]: https://github.com/babel/babel/
 [Express]: http://expressjs.com/
 [Express Variable]: https://github.com/jonathantneal/express-variable
+[pHTML]: https://github.com/phtmlorg/phtml
 [PostCSS]: https://github.com/postcss/postcss

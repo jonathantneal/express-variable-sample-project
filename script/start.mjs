@@ -1,7 +1,12 @@
 import express from 'express';
 import expressVariable from 'express-variable';
 import postcssPresetEnv from 'postcss-preset-env';
+import phtmlDefine from '@phtml/define';
 import phtmlDoctype from '@phtml/doctype';
+import phtmlHElement from '@phtml/h-element';
+import phtmlImageAlt from '@phtml/image-alt';
+import phtmlImageSize from '@phtml/image-size';
+import phtmlInclude from '@phtml/include';
 import phtmlJsx from '@phtml/jsx';
 
 const app = express();
@@ -37,7 +42,12 @@ app.use(expressVariable('public', {
 	html: {
 		plugins: [
 			phtmlDoctype(),
-			phtmlJsx({ data: { location: 'JSX in HTML' } })
+			phtmlInclude(),
+			phtmlJsx({ data: { location: 'JSX in HTML' } }),
+			phtmlDefine(),
+			phtmlHElement(),
+			phtmlImageAlt(),
+			phtmlImageSize({ override: 'auto '})
 		]
 	}
 }));

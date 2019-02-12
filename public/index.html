@@ -5,13 +5,15 @@
 		<script src="/react.js"></script>
 		<script src="/script.js"></script>
 		<link href="style.css" rel="stylesheet" />
+		<link href="../private/define.html" rel="html" />
 	</head>
 	<body>
 		<h1>Express Variable Sample Project</h1>
 		<>
-			<p>
-				Greatings from {location}!
+			<p class="intro">
+				Greetings from <strong>{location}</strong>!
 			</p>
 		</>
+		<x-intro slot-location="Custom Elements in HTML" />
 	</body>
 </html>
