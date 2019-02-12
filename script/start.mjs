@@ -1,5 +1,6 @@
 import express from 'express';
 import expressVariable from 'express-variable';
+import postcssImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 import phtmlDefine from '@phtml/define';
 import phtmlDoctype from '@phtml/doctype';
@@ -30,6 +31,7 @@ app.use(expressVariable('public', {
 	},
 	css: {
 		plugins: [
+			postcssImport(),
 			postcssPresetEnv({
 				stage: 0,
 				browsers: '> 1%'
